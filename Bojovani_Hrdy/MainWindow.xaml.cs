@@ -59,7 +59,13 @@ namespace Bojovani_Hrdy
 
         private void DrawPlayer(unit player, bool left)
         {
+            Image image = new Image();
+            image.Height = player.HitBox.Height;
+            image.Width = player.HitBox.Width;
+            image.Source = null;
+            
 
+            
         }
 
         private void DrawTerrain()
