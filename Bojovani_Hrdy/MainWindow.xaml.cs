@@ -62,8 +62,20 @@ namespace Bojovani_Hrdy
             Image image = new Image();
             image.Height = player.HitBox.Height;
             image.Width = player.HitBox.Width;
-            image.Source = null;
+            image.Source = new BitmapImage(new Uri("Obrazky/archer.png", UriKind.Relative));
             
+
+            Canvas.SetBottom(image, canvas.ActualHeight * 0.05);
+            if (left)
+            {
+                Canvas.SetLeft(image, 20);
+            }
+            else
+            {
+                Canvas.SetRight(image, 20);
+            }
+
+            canvas.Children.Add(image);
 
             
         }
