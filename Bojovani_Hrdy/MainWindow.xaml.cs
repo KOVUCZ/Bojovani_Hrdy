@@ -38,23 +38,26 @@ namespace Bojovani_Hrdy
                 Width = 40,
                 Height = 80
             };
+            this.Loaded += MainWindow_Loaded;
+                      
+                                    
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
             DrawGame();
-            
         }
 
         private void DrawGame()
         {
             DrawTerrain();
-            DrawPlayer(player1); 
-            DrawPlayer(player2);
+            DrawPlayer(player1, true); 
+            DrawPlayer(player2, false);
         }
 
-        private void DrawPlayer()
-        {
+       
 
-        }
-
-        private void DrawPlayer(unit player)
+        private void DrawPlayer(unit player, bool left)
         {
 
         }
@@ -63,8 +66,12 @@ namespace Bojovani_Hrdy
         {
             Rectangle rectangle = new Rectangle();
             rectangle.Width = canvas.ActualWidth;
-            rectangle.Height = canvas.ActualHeight;
+            rectangle.Height = canvas.ActualHeight *0.1;
             rectangle.Fill = Brushes.Green;
+
+            Canvas.SetLeft(rectangle, 0);
+            Canvas.SetBottom(rectangle, 0);
+
             canvas.Children.Add(rectangle);
 
         }
